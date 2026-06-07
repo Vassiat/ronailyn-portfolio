@@ -1,9 +1,18 @@
 {
   "name": "ronailyn-portfolio",
+  "description": "Professional art portfolio Ronailyn, built with Astro and deployed via Cloudflare Pages.",
+  "homepage": "https://ronailyn.pages.dev",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
+  "author": "Adrián Tablante <atablante04@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vassiat/ronailyn-portfolio.git"
+  },
+  "license": "UNLICENSED",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.14.0"
   },
   "scripts": {
     "dev": "astro dev",
@@ -12,7 +21,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/ts-plugin": "^1.10.9",
     "astro": "^6.4.4"
-  }
+  },
+  "devDependencies": {
+    "@astrojs/ts-plugin": "^1.10.9"
+  },
+  "packageManager": "pnpm@11.1.2"
 }
