@@ -1,0 +1,42 @@
+name: Deploy Astro to Cloudflare
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    deploy:
+      if: github.repository == 'Vassiat/ronailyn-portfolio'
+      timeout-minutes: 10
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+        deployments: write
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v6
+
+        - name: Install pnpm
+          uses: pnpm/action-setup@v4
+          with:
+            version: 11.1.2
+
+        - name: Set up Node.js
+          uses: actions/setup-node@v6
+          with:
+            node-version: "22.14.0"
+            cache: "pnpm"
+
+        - name: Install dependencies & Build
+          run: |
+            pnpm install
+            pnpm build
+
+        - name: Deploy to Cloudflare Pages
+          uses: cloudflare/wragler-action@v3
+          with:
+            apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+            accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+            command: pages deploy dist --project-name=ronailyn
+            gitHubToken: ${{ secrets.GITHUB_TOKEN }}
