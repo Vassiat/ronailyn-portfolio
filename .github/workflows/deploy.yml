@@ -40,3 +40,4 @@ jobs:
             accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
             command: pages deploy dist --project-name=ronailyn
             gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+            wranglerVersion: "4"
