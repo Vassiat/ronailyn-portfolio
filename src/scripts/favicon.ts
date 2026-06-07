@@ -1,4 +1,4 @@
-const linkFavicon = document.querySelector("link[href=\"/favicon-1.jpeg\"]")
+const linkFavicon = document.getElementById("dynamic-favicon");
 
 function FaviconAnimation() {
     if (!linkFavicon) {
