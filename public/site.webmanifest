@@ -1,0 +1,16 @@
+{
+    "name": "Ronailyn Portfolio",
+    "short_name": "Ronailyn",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/favicon-1.png",
+            "sizes": "24x24",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "theme_color": "#221a32",
+    "background_color": "#0e0204",
+    "display": "standalone"
+}

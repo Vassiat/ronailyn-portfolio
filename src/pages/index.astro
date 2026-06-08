@@ -28,9 +28,44 @@
 		<meta name="copyright" content="© 2026 Ronailyn Tablante. All rights reserved.">
 		<link rel="shortcut icon" sizes="24x24" href="/favicon.ico">
 		<link id="dynamic-favicon" rel="icon" sizes="24x24" href="/favicon-1.png" type="image/png" />
+		<meta name="theme-color" content="#ddccee" media="(prefers-color-scheme: light)">
+		<meta name="theme-color" content="#221a32" media="(prefers-color-scheme: dark)">
 		<meta name="generator" content={Astro.generator} />
 		<link rel="canonical" href="https://ronailyn.pages.dev">
 		<meta name="viewport" content="width=device-width" />
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#6c567c">
+		<style>
+			:root {
+				/* Color palette */
+				--primary: #722549;
+				--secondary: #ddccee;
+				--accent-purple: #6c567c;
+				--accent-dark: #221a32;
+				--bg-black: #0e0204;
+				--accent-sand: #d4b7a7;
+			}
+
+			body {
+				background-color: var(--secondary);
+				color: var(--accent-dark);
+			}
+
+			/* Until uses theme change */
+			/* @media (prefers-color-scheme: light) {
+				body {
+					background-color: var(--secondary);
+					color: var(--accent-dark);
+				}
+			}
+
+			@media (prefers-color-scheme: dark) {
+				body {
+					background-color: var(--bg-black);
+					color: var(--secondary);
+				}
+			} */
+		</style>
 		<script src="@scripts/favicon.ts" />
 	</head>
 	<body>
