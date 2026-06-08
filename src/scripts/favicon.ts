@@ -6,10 +6,10 @@ function FaviconAnimation() {
     }
 
 
-    if (linkFavicon.getAttribute("href") === "/favicon-1.jpeg") {
-        linkFavicon.setAttribute("href", "/favicon-2.jpeg");
+    if (linkFavicon.getAttribute("href") === "/favicon-1.png") {
+        linkFavicon.setAttribute("href", "/favicon-2.png");
     } else {
-        linkFavicon.setAttribute("href", "/favicon-1.jpeg");
+        linkFavicon.setAttribute("href", "/favicon-1.png");
     }
 
     setTimeout(FaviconAnimation, 1000);
