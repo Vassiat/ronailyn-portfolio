@@ -46,6 +46,14 @@
 				--accent-sand: #d4b7a7;
 			}
 
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				border: 0 solid;
+				outline: 0 solid;
+			}
+
 			body {
 				background-color: var(--secondary);
 				color: var(--accent-dark);
@@ -65,11 +73,36 @@
 					color: var(--secondary);
 				}
 			} */
+
+			.cat-separator {
+				animation: animarSrc 1s steps(1) infinite;
+			}
+
+			/* @keyframes animarSrc {
+				0% {
+					content: url('separator-1.png');
+				}
+				15% {
+					content: url('separator-2.png');
+				}
+				29% {
+					content: url('separator-3.png');
+				}
+				50% {
+					content: url('separator-4.png');
+				}
+			} */
+
 		</style>
 		<script src="@scripts/favicon.ts" />
 	</head>
 	<body>
-		<h1>Ronailyn</h1>
-		<img src="/separator-1.png" style="width: 100%;" />
+		<section style="min-height: 1700px;  position: relative;">
+			<h1>Ronailyn</h1>
+
+		</section>
+		<section style="min-height: 80dvh; position: relative;">
+			<img class="cat-separator" alt="Cat Section Separator" src="/separator-1.png" style="width: 100%; position:absolute; left: 0; top: 0; translate: 0 -100%;" />
+		</section>
 	</body>
 </html>
