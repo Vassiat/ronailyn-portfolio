@@ -58,7 +58,7 @@
 			body {
 				background-color: #d4b7a770;
 				color: var(--accent-dark);
-				cursor: url("/cursor.svg") 20 10, auto;
+				cursor: url("/cursor.svg") 5 8, auto;
 			}
 
 			.colorPalette {
@@ -144,10 +144,14 @@
 				<span>Venezuelan Artist</span>
 			</h1>
 		</section>
-		<section style="min-height: 80vh; position: relative; background-color: #110407; color: var(--accent-sand); padding-top: 4rem;">
-			<div class="cat-separator">
+		<section class="remove-drag-img" style="min-height: 80vh; position: relative; background-color: #110407; color: var(--accent-sand); padding-top: 4rem;">
+			<div class="cat-separator" ondragstart="return false;" onselectstart="return false;" draggable="false">
 				<div id="tail-svg"></div>
-				<img alt="Back black cat illustration" src="/black-cat/back.png" style="width: 100%; position: relative; mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%); user-select: none; pointer-events: none; user-drag: none;" />
+				<img
+					alt="Back black cat illustration"
+					src="/black-cat/back.png"
+					style="width: 100%; position: relative; mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%); user-select: none; pointer-events: none; user-drag: none;"
+					/>
 			</div>
 
 			<main style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -164,6 +168,33 @@
 				</p>
 			</main>
 		</section>
+		<script is:inline>
+			const section = document.querySelector(".remove-drag-img");
+
+			
+			section?.addEventListener('dragstart', (e) => {
+				const seleccion = window.getSelection();
+	
+				if (seleccion && e.dataTransfer?.setDragImage) {
+					const textClone = document.createElement('div');
+					textClone.innerText = seleccion.toString();
+					
+					textClone.style.position = 'absolute';
+					textClone.style.top = '-9999px';
+					textClone.style.padding = '5px 10px';
+					textClone.style.borderRadius = '4px';
+					textClone.style.fontFamily = 'sans-serif';
+					
+					document.body.appendChild(textClone);
+					
+					e.dataTransfer.setDragImage(textClone, 0, 0);
+					
+					setTimeout(() => {
+						document.body.removeChild(textClone);
+					}, 0);
+				}
+			})
+		</script>
 
 		<section class="colorPalette">
 			<h1 style="flex: 1 0 100%; text-align: center;">Color palette</h1>
