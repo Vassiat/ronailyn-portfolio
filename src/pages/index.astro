@@ -40,6 +40,7 @@
 				/* Color palette */
 				--primary: #722549;
 				--secondary: #ddccee;
+				--secondary-70: #ddcceecb;
 				--accent-purple: #6c567c;
 				--accent-dark: #221a32;
 				--bg-black: #0e0204;
@@ -91,35 +92,76 @@
 				}
 			} */
 
-			.cat-separator {
-				animation: animarSrc 1s steps(1) infinite;
+			.principal-nekita-logo {
+				width: 6ch;
+				aspect-ratio: 16/9;
+				position: relative;
+				overflow: hidden;
+				font-size: 4rem;
 			}
 
-			/* @keyframes animarSrc {
-				0% {
-					content: url('separator-1.png');
-				}
-				15% {
-					content: url('separator-2.png');
-				}
-				29% {
-					content: url('separator-3.png');
-				}
-				50% {
-					content: url('separator-4.png');
-				}
-			} */
+			.principal-nekita-logo img {
+				position: absolute;
+				width: 130%;
+				height: 130%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				object-fit: contain;
+			}
 
+			.title-hero {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.cat-separator {
+				width: 100%;
+				position: absolute;
+				left: 0;
+				bottom: 99%;
+				translate: 0 30%;
+			}
+
+			#tail-svg {
+				position: absolute;
+				right: 0;
+				bottom: 45%;
+				width: 50%;
+			}
 		</style>
 		<script src="@scripts/favicon.ts" />
+		<script src="@scripts/tails.ts" />
 	</head>
 	<body>
 		<section style="min-height: 1700px;  position: relative;">
-			<h1>Ronailyn</h1>
-
+			<h1 class="title-hero">
+				<div class="principal-nekita-logo">
+					<img alt="Nekita logo" src="/logo.png" />
+				</div>
+				<span>Venezuelan Artist</span>
+			</h1>
 		</section>
-		<section style="min-height: 80dvh; position: relative;">
-			<img class="cat-separator" alt="Cat Section Separator" src="/separator-1.png" style="width: 100%; position:absolute; left: 0; top: 0; translate: 0 -100%;" />
+		<section style="min-height: 80vh; position: relative; background-color: #110407; color: var(--accent-sand); padding-top: 4rem;">
+			<div class="cat-separator">
+				<div id="tail-svg"></div>
+				<img alt="Back black cat illustration" src="/black-cat/back.png" style="width: 100%; position: relative; mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%); user-select: none;" />
+			</div>
+
+			<main style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+				<h2 style="text-align: center; font-size: 2rem;">
+					Title
+				</h2>
+	
+				<p style="padding: 0 0.3rem; opacity: 0.65; text-wrap: pretty;">
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique voluptate possimus alias inventore tempore exercitationem vel dolorum, tempora omnis pariatur nihil quasi earum quod, dignissimos totam quos error? Illum, quibusdam.
+					
+					<br />
+					<br />
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium minima earum officia animi officiis tempora odit, quisquam, excepturi beatae, sunt ea culpa! Molestiae quia saepe iusto et distinctio facere quidem?
+				</p>
+			</main>
 		</section>
 
 		<section class="colorPalette">
