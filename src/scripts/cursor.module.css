@@ -2,11 +2,12 @@
     position: fixed;
     top: 0;
     left: -100%;
-    width: min-content;
-    height: min-content;
+    width: 22px;
+    height: 22px;
     pointer-events: none;
     user-select: none;
     will-change: transform;
+    z-index: 1;
 }
 
 .show {
