@@ -35,6 +35,11 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="manifest" href="/site.webmanifest">
 		<meta name="msapplication-TileColor" content="#6c567c">
+		<style is:global>
+			*, *:after, *:before {
+				cursor: url("/cursor.svg") 5 8, auto;
+			}
+		</style>
 		<style>
 			:root {
 				/* Color palette */
@@ -58,7 +63,6 @@
 			body {
 				background-color: #d4b7a770;
 				color: var(--accent-dark);
-				cursor: url("/cursor.svg") 5 8, auto;
 			}
 
 			.colorPalette {
@@ -117,6 +121,14 @@
 				align-items: center;
 			}
 
+			*[data-typewriter-words] {
+				display: inline-flex;
+				flex-direction: column;
+				position: relative;
+				overflow: hidden;
+				font-size: 1em;
+			}
+
 			.cat-separator {
 				width: 100%;
 				position: absolute;
@@ -135,6 +147,7 @@
 		<script src="@scripts/favicon.ts" />
 		<script src="@scripts/tails.ts" />
 		<script src="@scripts/cursor.ts" />
+		<script src="@scripts/typewriter.ts" />
 	</head>
 	<body>
 		<section style="min-height: 1700px;  position: relative;">
@@ -142,7 +155,10 @@
 				<div class="principal-nekita-logo">
 					<img alt="Nekita logo" src="/logo.png" />
 				</div>
-				<span>Venezuelan Artist</span>
+				<span>Venezuelan <stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="float"></stroke></span>
+				<stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="float2"></stroke>
+				<stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="stair"></stroke>
+				<stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="bubble"></stroke>
 			</h1>
 		</section>
 		<section class="remove-drag-img" style="min-height: 80vh; position: relative; background-color: #110407; color: var(--accent-sand); padding-top: 4rem;">
