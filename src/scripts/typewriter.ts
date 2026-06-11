@@ -72,12 +72,15 @@ targets.forEach((el) => {
 
         wordEl.classList.add(styles.wordElement);
 
-        arrayWord.forEach((char) => {
+        arrayWord.forEach((char, i) => {
             const charEl = document.createElement("span");
             charEl.textContent = char;
             charEl.classList.add(styles.charElement);
             charEl.style.display = "inline-block";
 
+            if (i % 2) {
+                charEl.style.zIndex = "10";
+            }
             charEl.style.left = `${lastCharWide}px`;
             
             
