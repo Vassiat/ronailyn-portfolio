@@ -5,6 +5,7 @@
   "compilerOptions": {
     "paths": {
       "@scripts/*": ["./src/scripts/*"],
+      "@components/*": ["./src/components/*"],
     },
     "plugins": [
       {

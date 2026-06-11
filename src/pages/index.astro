@@ -1,4 +1,5 @@
 ---
+import InstagramCustom from "@components/InstagramCustom.astro"
 
 ---
 
@@ -98,20 +99,14 @@
 			} */
 
 			.principal-nekita-logo {
-				width: 6ch;
-				aspect-ratio: 16/9;
 				position: relative;
-				overflow: hidden;
-				font-size: 4rem;
+				height: 5rem;
+				padding: 0.5rem 0;
 			}
 
 			.principal-nekita-logo img {
-				position: absolute;
-				width: 130%;
-				height: 130%;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
+				width: 100%;
+				height: 100%;
 				object-fit: contain;
 			}
 
@@ -150,6 +145,16 @@
 				right: 0;
 				width: 50%;
 			}
+
+			.instagram-logo {
+				color: rgb(163, 14, 43);
+				transition: 300ms;
+			}
+
+			.instagram-logo:hover {
+				color: rgba(241, 124, 28, 0.719)
+			}
+
 		</style>
 		<script src="@scripts/favicon.ts" />
 		<script src="@scripts/black-tail.ts" />
@@ -159,15 +164,31 @@
 	</head>
 	<body>
 		<section style="min-height: 1700px;  position: relative;">
-			<h1 class="title-hero">
+			<h1 class="title-hero" style="margin-top: 0.7rem;">
+				<a href="https://www.instagram.com/" target="_blank">
+					<InstagramCustom class="instagram-logo" style="width: 3rem;" />
+				</a>
 				<div class="principal-nekita-logo">
-					<img alt="Nekita logo" src="/logo.png" />
+					<img alt="Nekita logo" src="/nekita.png" />
 				</div>
 				<span>Venezuelan <stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="float"></stroke></span>
 				<stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="float2"></stroke>
 				<stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="stair"></stroke>
 				<stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="bubble"></stroke>
 			</h1>
+
+			<!-- <div class="networks" style="width: 600px; max-width: 100%; position: relative; padding: 4rem 3rem;">
+				<SquareCloudBordered style="position: absolute; left: 0; top: 0; bottom: 0; right: 0; z-index: -1; width: 100%;" height=440 preserveAspectRatio="none" />
+				<h2 style="text-align: center; color: var(--accent-purple);">Social networks</h2>
+				<div style="display: flex; justify-content: space-around; gap: 1rem; align-items: center; padding: 0 5rem; margin-top: 1rem; flex-wrap: wrap; height: 100%;">
+					<a href="https://www.instagram.com/">
+						<InstagramCustom class="instagram-logo" style="width: 5rem;" />
+					</a>
+					<a href="https://www.instagram.com/">
+						Gmail
+					</a>
+				</div>
+			</div> -->
 		</section>
 
 		<div id="tail-svg"></div>
