@@ -145,14 +145,15 @@
 				z-index: 10;
 			}
 
-			#tail-svg > svg {
+			#tail-svg > svg, #tail-svg > img {
 				position: absolute;
 				right: 0;
 				width: 50%;
 			}
 		</style>
 		<script src="@scripts/favicon.ts" />
-		<script src="@scripts/tails.ts" />
+		<script src="@scripts/black-tail.ts" />
+		<script src="@scripts/white-tail.ts" />
 		<script src="@scripts/cursor.ts" />
 		<script src="@scripts/typewriter.ts" />
 	</head>
@@ -172,18 +173,19 @@
 		<div id="tail-svg"></div>
 		<div class="cat-separator" ondragstart="return false;" onselectstart="return false;" draggable="false">
 			<img
-				alt="Back black cat illustration"
-				src="/black-cat/back.png"
-				style="width: 100%; position: relative; mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%); user-select: none; pointer-events: none; user-drag: none; z-index: -1 !important;"
-				/>
+			alt="Back black cat illustration"
+			src="/black-cat/back.png"
+			style="width: 100%; position: relative; mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%); user-select: none; pointer-events: none; user-drag: none; z-index: -1 !important;"
+			/>
 		</div>
-		<section class="remove-drag-img" style="min-height: 80vh; position: relative; color: var(--accent-sand); padding-top: 4rem; background-color: #110407;">
-
+		
+		<section class="remove-drag-img" style="min-height: 80vh; margin-bottom: 300px; position: relative; color: var(--accent-sand); padding-top: 4rem; background-color: #110407;">
+			
 			<main style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
 				<h2 style="text-align: center; font-size: 2rem;">
 					Title
 				</h2>
-	
+				
 				<p style="padding: 0 0.3rem; opacity: 0.65; text-wrap: pretty;">
 					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique voluptate possimus alias inventore tempore exercitationem vel dolorum, tempora omnis pariatur nihil quasi earum quod, dignissimos totam quos error? Illum, quibusdam.
 					
@@ -195,11 +197,11 @@
 		</section>
 		<script is:inline>
 			const section = document.querySelector(".remove-drag-img");
-
+			
 			
 			section?.addEventListener('dragstart', (e) => {
 				const seleccion = window.getSelection();
-	
+				
 				if (seleccion && e.dataTransfer?.setDragImage) {
 					const textClone = document.createElement('div');
 					textClone.innerText = seleccion.toString();
@@ -220,6 +222,33 @@
 				}
 			})
 		</script>
+		
+		<div id="tail-svg" class="tail-svg" style="scale: -1 1; translate: 0% 0%; width: 100%;">
+			<img alt="tail" src="/white-cat/tail/1.png" style="width:60%; translate: 0 -30%; user-select: none; pointer-events: none; user-drag: none; z-index: -1 !important;" />
+		</div>
+		<div class="cat-separator" ondragstart="return false;" onselectstart="return false;" draggable="false">
+			<img
+				alt="White black cat illustration"
+				src="/white-cat/back.png"
+				style="width: 100%; position: relative; mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 95%); user-select: none; pointer-events: none; user-drag: none; z-index: -1 !important; transform: scaleX(-1);"
+				/>
+		</div>
+		<section class="remove-drag-img" style="min-height: 80vh; position: relative; color: var(--accent-dark); padding-top: 4rem; background-color: #DBB9C7;">
+
+			<main style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+				<h2 style="text-align: center; font-size: 2rem;">
+					Title
+				</h2>
+	
+				<p style="padding: 0 0.3rem; opacity: 0.65; text-wrap: pretty;">
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique voluptate possimus alias inventore tempore exercitationem vel dolorum, tempora omnis pariatur nihil quasi earum quod, dignissimos totam quos error? Illum, quibusdam.
+					
+					<br />
+					<br />
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium minima earum officia animi officiis tempora odit, quisquam, excepturi beatae, sunt ea culpa! Molestiae quia saepe iusto et distinctio facere quidem?
+				</p>
+			</main>
+		</section>
 
 		<section class="colorPalette">
 			<h1 style="flex: 1 0 100%; text-align: center;">Color palette</h1>

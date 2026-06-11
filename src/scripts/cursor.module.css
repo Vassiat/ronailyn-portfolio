@@ -2,8 +2,8 @@
     position: fixed;
     top: 0;
     left: -100%;
-    width: 22px;
-    height: 22px;
+    width: 1.5em;
+    height: 1.5em;
     pointer-events: none;
     user-select: none;
     will-change: transform;
