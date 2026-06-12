@@ -66,6 +66,28 @@ import InstagramCustom from "@components/InstagramCustom.astro"
 				color: var(--accent-dark);
 			}
 
+			html::-webkit-scrollbar {
+				background: #d4b7a7;  
+			}
+
+			html::-webkit-scrollbar-button {
+				display: none;      
+			}       
+
+			html::-webkit-scrollbar-thumb {
+				background-color: var(--primary); 
+				border-radius: 6px;      
+				
+				border: 2px solid transparent;
+				background-clip: padding-box;
+			}
+
+			@supports (-moz-appearance: none) {
+				html {
+					scrollbar-color: var(--primary) #d4b7a7;
+				}
+			}
+
 			.colorPalette {
 				display: flex;
 				justify-content: center;
