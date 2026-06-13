@@ -1,5 +1,6 @@
 ---
 import InstagramCustom from "@components/InstagramCustom.astro"
+import { Font } from "astro:assets"
 
 ---
 
@@ -36,6 +37,7 @@ import InstagramCustom from "@components/InstagramCustom.astro"
 		<meta name="viewport" content="width=device-width" />
 		<link rel="manifest" href="/site.webmanifest">
 		<meta name="msapplication-TileColor" content="#6c567c">
+		<Font cssVariable="--font-minecraft" preload />
 		<style is:global>
 			*, *:after, *:before {
 				cursor: url("/cursor.svg") 5 8, auto;
@@ -64,6 +66,7 @@ import InstagramCustom from "@components/InstagramCustom.astro"
 			body {
 				background-color: #d4b7a770;
 				color: var(--accent-dark);
+				font-family: var(--font-minecraft);
 			}
 
 			html::-webkit-scrollbar {
