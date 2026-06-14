@@ -7,20 +7,34 @@
 * **Package Manager:** [pnpm](https://pnpm.io/) `v11.1.2+`.
 * **Environment:** Node.js `v22.14.0+` *(this guarantees compatibility with modern Astro, see [Node support](https://docs.astro.build/en/upgrade-astro/#nodejs-support-and-upgrade-policies)).*
 
+---
+
+### 📝 CI/CD & ☁ Deployment
+
+This project is automated via **GitHub Actions** and hosted on **Cloudflare** (Free Tier). 
+
+<!-- This infrastructure was chosen to ensure maximum loading speed and edge performance for the portfolio, while keeping the deployment completely isolated from external hosting servers to prevent any unnecessary overhead or vulnerability risks. -->
+
 ## 🚀 Project Structure
 
 Inside of project, you'll see the following folders:
 
 ```text
-/
+ /
 ├── public/
-├── src/
-│   └── assets/
-│       └── fonts/
-│   └── components/
-│   └── pages/
-└── └── scripts/ # Client-runtime logic
+└── src/
+    ├── assets/
+    │   └── fonts/
+    ├── components/
+    ├── pages/
+    └── scripts/ # Client-runtime logic
 ```
+
+## 🤝 Feedback & Issues
+
+Since this is a personal artist portfolio, **Pull Requests are not being accepted**, as the project represents the artist's personal identity, work, and code style. 
+
+However, if you happen to find a visual bug, a broken link, or a performance issue while browsing, please feel free to open an **Issue**. Your feedback to help optimize the portfolio is highly appreciated!
 
 ## 🎨 License & Intellectual Property
 This repository uses two different licenses to separate the technical development from the artistic work:
