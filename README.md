@@ -19,7 +19,7 @@ This project is automated via **GitHub Actions** and hosted on **Cloudflare** (F
 
 Inside of project, you'll see the following folders:
 
-```text
+```yaml
  /
 ├── public/
 └── src/
