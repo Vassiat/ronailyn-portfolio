@@ -81,14 +81,12 @@ targets.forEach((el) => {
             if (i % 2) {
                 charEl.style.zIndex = "10";
             }
-            charEl.style.left = `${lastCharWide}px`;
             
             
             wordEl.appendChild(charEl);
             requestAnimationFrame(() => {
                 const width = charEl.getBoundingClientRect().width;
                 lastCharWide += width;
-                charEl.style.left = `${lastCharWide - width}px`;
                 charEl.style.transition = 'none';
                 charEl.style.setProperty(animationTypes[wordType].cssProperty, animationTypes[wordType].enter);
                     

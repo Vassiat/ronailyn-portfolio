@@ -181,6 +181,18 @@ import { Font } from "astro:assets"
 			}
 
 		</style>
+		<style is:global>
+			.hero span {
+				transition: 500ms !important;
+			}
+
+			.hero > span {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				margin-left: auto;
+			}
+		</style>
 		<script src="@scripts/favicon.ts" />
 		<script src="@scripts/black-tail.ts" />
 		<script src="@scripts/white-tail.ts" />
@@ -196,24 +208,12 @@ import { Font } from "astro:assets"
 				<div class="principal-nekita-logo">
 					<img alt="Nekita logo" src="/nekita.png" />
 				</div>
-				<span>Venezuelan <stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="float"></stroke></span>
-				<stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="float2"></stroke>
-				<stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="stair"></stroke>
-				<stroke data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="bubble"></stroke>
+				<span>
+					Venezuelan
+				</span>
 			</h1>
+			<stroke class="hero" style="width: 100%; font-size: 7rem; font-weight: 700; color: #4d4d4d;" data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="bubble"></stroke>
 
-			<!-- <div class="networks" style="width: 600px; max-width: 100%; position: relative; padding: 4rem 3rem;">
-				<SquareCloudBordered style="position: absolute; left: 0; top: 0; bottom: 0; right: 0; z-index: -1; width: 100%;" height=440 preserveAspectRatio="none" />
-				<h2 style="text-align: center; color: var(--accent-purple);">Social networks</h2>
-				<div style="display: flex; justify-content: space-around; gap: 1rem; align-items: center; padding: 0 5rem; margin-top: 1rem; flex-wrap: wrap; height: 100%;">
-					<a href="https://www.instagram.com/">
-						<InstagramCustom class="instagram-logo" style="width: 5rem;" />
-					</a>
-					<a href="https://www.instagram.com/">
-						Gmail
-					</a>
-				</div>
-			</div> -->
 		</section>
 
 		<div id="tail-svg"></div>
