@@ -64,7 +64,9 @@ import { Font } from "astro:assets"
 			}
 
 			body {
-				background-color: #d4b7a770;
+				--bg-body: #ecdfd8;
+				/* background-color: black; */
+				background-color: var(--bg-body);
 				color: var(--accent-dark);
 				font-family: var(--font-minecraft);
 			}
@@ -180,7 +182,44 @@ import { Font } from "astro:assets"
 				color: rgba(241, 124, 28, 0.719)
 			}
 
-		</style>
+			.hero-section {
+				position: relative;
+			}
+
+			
+			.hero-section .circles {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 45%;
+				z-index: -1;
+				
+				display: block; 
+				
+				filter: url('#gooey-transparente');
+				/* background: linear-gradient(to bottom, transparent 0%, black 80%); */
+				background-color: #dbb098;
+				mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 95%);
+				overflow: hidden;
+				/* background: 
+				linear-gradient(to bottom, transparent 20%, rgba(0, 0, 0, 0.555) 120%),
+				radial-gradient(100% 70% at top, transparent 10%, #000000b2 180%); */
+			}
+			/* 
+			.hero-section .circles::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				z-index: -2;
+				background-color: black;
+			} */
+			
+			</style>
 		<style is:global>
 			.hero span {
 				transition: 500ms !important;
@@ -198,10 +237,20 @@ import { Font } from "astro:assets"
 		<script src="@scripts/white-tail.ts" />
 		<script src="@scripts/cursor.ts" />
 		<script src="@scripts/typewriter.ts" />
+		<script src="@scripts/hero-scroll.ts" />
 	</head>
 	<body>
-		<section style="min-height: 1700px;  position: relative;">
-			<h1 class="title-hero" style="margin-top: 0.7rem;">
+		<svg style="visibility: hidden; position: absolute;" width="0" height="0">
+			<defs>
+				<filter id="gooey-transparente">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+				<feComposite in="SourceGraphic" in2="goo" operator="atop" />
+				</filter>
+			</defs>
+		</svg>
+		<section class="hero-section" style="min-height: 1700px;  position: relative;">
+			<h1 class="title-hero">
 				<a href="https://www.instagram.com/" target="_blank">
 					<InstagramCustom class="instagram-logo" style="width: 3rem;" />
 				</a>
@@ -213,7 +262,7 @@ import { Font } from "astro:assets"
 				</span>
 			</h1>
 			<stroke class="hero" style="width: 100%; font-size: 7rem; font-weight: 700; color: #4d4d4d;" data-typewriter-words="Artist,Illustrator,Designer" data-typewriter-type="bubble"></stroke>
-
+			<div class="circles"></div>
 		</section>
 
 		<div id="tail-svg"></div>

@@ -1,0 +1,22 @@
+.circle {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: var(--bg-body);
+    
+    transform: translate(-50%, -50%); 
+    scale: 0;
+    
+    will-change: transform;
+    animation: appear 1s ease-out var(--delay) forwards;
+    opacity: 0;
+    transform-origin: 0 0;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
