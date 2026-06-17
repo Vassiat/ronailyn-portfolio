@@ -3,6 +3,16 @@ import { isMobileTouchDevice } from './utils';
 import jingleBell from '../../public/jingle-bell.svg'
 
 if (!isMobileTouchDevice()) {
+    const body = document.body;
+    
+    body.addEventListener("mousedown", ()=>{
+        body.classList.add("cursor-down")
+    })
+
+    body.addEventListener("mouseup", ()=>{
+        body.classList.remove("cursor-down")
+    })
+
 
     const complementCursor = document.createElement("div");
 
